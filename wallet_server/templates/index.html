@@ -4,13 +4,71 @@
     <meta charset="UTF-8">
     <title>Wallet</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        #walletBox{
+            width: 50%;
+            margin: 0 auto;
+            border-radius: 15px;
+            background: #BECFDB;
+            padding: 15px;
+            margin-bottom: 25px;
+            margin-top: 40px;
+            text-align: center;
+            font-family: Papyrus;
+        }
+        
+        #transactionBox{
+            width: 50%;
+            margin: 0 auto;
+            border-radius: 15px;
+            background: #BECFDB;
+            padding: 15px;
+            font-family: Papyrus;
+            
+        }
+
+        #buttonBox{
+            display:inline;
+            margin-left: 10px;
+        }
+
+        #reload_wallet{
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            font-family: Papyrus;
+        }
+
+        #send_money_button{
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            font-family: Papyrus;
+        }
+
+    </style>
 </head>
 <body>
 
     <div id="walletBox" >
-        <h1>Wallet</h1>
-        <div id="wallet_amount">0</div>
-        <button id="reload_wallet">Reload Wallet</button>
+        <h1 id="walletTitle">Wallet</h1>
+        <div id="wallet_amount">
+            <text>Funds: 0</text>
+            <div id="buttonBox"><button id="reload_wallet">Reload Wallet</button></div>
+        </div>
+        
 
         <p>Public  Key</p>
         <textarea id="public_key" rows="2" cols="100"></textarea>
@@ -22,7 +80,6 @@
         <textarea id="blockchain_address" rows="1" cols="100"></textarea>
 
     </div>
-
     <div id="transactionBox">
         <h1>Send Money</h1>
         <div>
