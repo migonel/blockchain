@@ -4,7 +4,6 @@ import (
 	"GoBlockchain/utils"
 	"GoBlockchain/wallet"
 	"encoding/json"
-	"fmt"
 	"html/template"
 	"io"
 	"log"
@@ -71,11 +70,11 @@ func (ws *WalletServer) CreateTransaction(w http.ResponseWriter, req *http.Reque
 			return
 		}
 
-		fmt.Println(*t.SenderPublicKey)
-		fmt.Println(*t.SenderBlockchainAddress)
-		fmt.Println(*t.SenderPrivateKey)
-		fmt.Println(*t.RecipientBlockchainAddress)
-		fmt.Println(*t.Value)
+		//fmt.Println(*t.SenderPublicKey)
+		//fmt.Println(*t.SenderBlockchainAddress)
+		//fmt.Println(*t.SenderPrivateKey)
+		//fmt.Println(*t.RecipientBlockchainAddress)
+		//fmt.Println(*t.Value)
 
 	default:
 		w.WriteHeader(http.StatusBadRequest)
