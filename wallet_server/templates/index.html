@@ -40,19 +40,19 @@
                 }
 
                 $.ajax({
-                    url: '/transaction',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify(transaction_data),
-                    success: function(response){
-                        console.info(response)
-                        alert('Send success');
-                    },
-                    error: function (response){
-                        console.error(response);
-                        alert('Send failed');
-                    }
-                })
+                     url: '/transaction',
+                     type: 'POST',
+                     contentType: 'application/json',
+                     data: JSON.stringify(transaction_data),
+                     success: function (response) {
+                         console.info(response);
+                         alert('Send success');
+                     },
+                     error: function (response) {
+                         console.error(response);
+                         alert('Send failed');
+                     }
+                 })
 
             })
         })
