@@ -57,6 +57,33 @@
             })
         })
 
+        function reload_amount() {
+            let data = {'blockchain_address': $('#blockchain_address').val()}
+            $.ajax({
+                url: '/wallet/amount',
+                type: 'GET',
+                data: data,
+                success: function(response){
+                    let amount = response['amount'];
+                    $('#wallet_amount').text(amount);
+                },
+                error: function(error){
+                    console.error(error)
+                }
+            })
+        }
+
+        $(document).ready(function(){
+            $('#reload_wallet').click(function(){
+                reload_amount();
+            })
+        
+        })
+
+        $(document).ready(function(){
+            setInterval(reload_amount,3000)
+        })
+
     </script>
 
     <style>
@@ -83,7 +110,7 @@
             
         }
 
-        #buttonBox{
+        #buttonBox, #wallet_amount{
             display:inline;
             margin-left: 10px;
         }
@@ -124,8 +151,8 @@
 
     <div id="walletBox" >
         <h1 id="walletTitle">Wallet</h1>
-        <div id="wallet_amount">
-            <text>Funds: 0</text>
+        <div >
+            <text>Funds: </text><div id="wallet_amount">0</div>
             <div id="buttonBox"><button id="reload_wallet">Reload Wallet</button></div>
         </div>
         
